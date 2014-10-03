@@ -5,11 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
 		<title>Welcome to mysite</title>
-
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="css/normalize/normalize.css">
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="my_project.css" rel="stylesheet">
+		<%= stylesheet_link_tag 'normalize', :media => 'all' %>
+		<%= stylesheet_link_tag 'bootstrap', :media => 'screen' %>
+		<%= stylesheet_link_tag 'my_project', :media => 'screen' %>
 		<!--[if IE 6]>
 			<script src="js/html5shiv/dist/html5shiv.js"></script>
 		<![endif]-->
@@ -20,6 +18,9 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<%= javascript_include_tag 'jquery' -%>
+		<%= javascript_include_tag 'bootstrap' -%>
+		<%= javascript_include_tag 'my_project' -%>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="my_project.js"></script>
@@ -30,25 +31,25 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="logo">
-							<a href="#content_home"><img src="images/logo.png" alt="logo" class="logo go_home"></a>
+							<a href="#content_home"><%= image_tag("logo.png", :alt =>"logo", :class => "logo go_home") %></a>
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<nav>
 							<ul class="menu">
-								<li><a href="#content_home"><img class="go_home" src="images/home.png" alt="Home"></a></li>
-								<li><a href="#content_portfolio"><img class="go_portfolio" src="images/portfolio.png" alt="Portfolio"></a></li>
-								<li><a href="#content_contact"><img class="go_contact" src="images/contact.png" alt="contact"></a></li>
+								<li><a href="#content_home"><%= image_tag("home.png", :alt =>"home", :class => "go_home") %></a></li>
+								<li><a href="#content_portfolio"><%= image_tag("portfolio.png", :alt =>"portfolio", :class => "go_portfolio") %></a></li>
+								<li><a href="#content_contact"><%= image_tag("contact.png", :alt =>"contact", :class => "go_contact") %></a></li>
 							</ul>
 						</nav>
-							<img id="pointer" src="images/pointer.png" alt="pointer">
+							<%= image_tag("pointer.png", :alt =>"pointer", :id => "pointer") %>
 					</div>
 				</div>
 			</header>
 			<div class="content_body">
 				<div id="content_home" class="content_home">
 					<div class="arrow">
-						<a href="#content_portfolio"><img class="go_portfolio" src="images/home_arrow.png" alt=""></a>
+						<a href="#content_portfolio"><%= image_tag("home_arrow.png", :alt =>"go to portfolio", :class => "go_portfolio") %></a>
 						<div class="arrow_port"></div>
 					</div>
 				</div>
@@ -75,7 +76,7 @@
 						
 					</div>
 					<div class="arrow">
-						<a href="#content_contact"><img class="go_contact" src="images/portfolio_arrow.png" alt=""></a>
+						<a href="#content_contact"><%= image_tag("portfolio_arrow.png", :alt =>"go to contact", :class => "go_contact") %></a>
 						<div class="arrow_cont"></div>
 					</div>
 				</div>
@@ -88,14 +89,14 @@
 						<div class="col-lg-6">
 							<textarea name="" placeholder="ask your queries..." id="contact_text" cols="30" rows="4"></textarea>
 						</div>
-						<div class="col-lg-12 ">
+						<div class="col-lg-12" style="padding-right:135px;">
 							<div class="contact_send btn">SEND</div>							
 						</div>
 					</div>
 				</div>
 				<footer class="content_footer">
 					<div class="arrow">
-						<a href="#content_home"><img class="go_home" src="images/contact_arrow.png" alt=""></a>
+						<a href="#content_home"><%= image_tag("contact_arrow.png", :alt =>"go to home", :class => "go_home") %></a>
 						<div class="arrow_home"></div>						
 					</div>
 				</footer>
